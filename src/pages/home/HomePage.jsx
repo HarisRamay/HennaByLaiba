@@ -7,7 +7,6 @@ import Gallery from "../../widgets/Gallery/Gallery";
 import WhyChooseUs from "../../widgets/WhyChooseUs/WhyChooseUs";
 import Testimonials from "../../widgets/Testimonials/Testimonials";
 import FAQ from "../../widgets/FAQ/FAQ";
-import Instagram from "../../widgets/Instagram/Instagram";
 import ContactCTA from "../../widgets/ContactCTA/ContactCTA";
 import Footer from "../../widgets/Footer/Footer";
 import WhatsAppButton from "../../features/whatsapp-contact/ui/WhatsAppButton";
@@ -26,7 +25,6 @@ function HomePage() {
         <WhyChooseUs />
         <Testimonials />
         <FAQ />
-        <Instagram />
         <ContactCTA />
       </main>
 
