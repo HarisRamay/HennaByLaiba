@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #faf6ef;
+  color: #2c211d;
+  font-family: "Manrope", sans-serif;
+}
+
+::selection {
+  background: #6b2737;
+  color: white;
+}
+
+section {
+  scroll-margin-top: 72px;
+}
