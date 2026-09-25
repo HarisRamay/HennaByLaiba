@@ -57,7 +57,7 @@ function WhyChooseUs() {
                         return (
                             <article
                                 key={reason.id}
-                                className="rounded-[1.5rem] border border-white/15 bg-white/5 p-6 text-center backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/10"
+                                className="rounded-3xl border border-white/15 bg-white/5 p-6 text-center backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/10"
                             >
                                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E7CFA4] text-[#6B2737]">
                                     <Icon size={24} strokeWidth={1.7} />
