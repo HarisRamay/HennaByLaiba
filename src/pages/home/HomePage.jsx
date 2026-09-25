@@ -12,27 +12,33 @@ import Footer from "../../widgets/Footer/Footer";
 import WhatsAppButton from "../../features/whatsapp-contact/ui/WhatsAppButton";
 
 function HomePage() {
-  return (
-    <div>
-      <Navbar />
+    return (
+        <div className="relative bg-[#2C211D]">
+            <Navbar />
 
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Pricing />
-        <Gallery />
-        <WhyChooseUs />
-        <Testimonials />
-        <FAQ />
-        <ContactCTA />
-      </main>
+            {/* Main content */}
+            <main className="relative z-10 bg-[#FAF6EF]">
+                <Hero />
+                <About />
+                <Services />
+                <Pricing />
+                <Gallery />
+                <WhyChooseUs />
+                <Testimonials />
+                <FAQ />
+                <ContactCTA />
+            </main>
 
-      <Footer />
+            {/* Footer reveal area */}
+            <div className="relative">
+                <div className="sticky bottom-0 z-0">
+                    <Footer />
+                </div>
+            </div>
 
-      <WhatsAppButton />
-    </div>
-  );
+            <WhatsAppButton />
+        </div>
+    );
 }
 
 export default HomePage;
