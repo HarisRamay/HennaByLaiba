@@ -10,35 +10,28 @@ import FAQ from "../../widgets/FAQ/FAQ";
 import ContactCTA from "../../widgets/ContactCTA/ContactCTA";
 import Footer from "../../widgets/Footer/Footer";
 import WhatsAppButton from "../../features/whatsapp-contact/ui/WhatsAppButton";
-
 function HomePage() {
-    return (
-        <div className="relative bg-[#2C211D]">
-            <Navbar />
+  return (
+    <div>
+      <Navbar />
 
-            {/* Main content */}
-            <main className="relative z-10 bg-[#FAF6EF]">
-                <Hero />
-                <About />
-                <Services />
-                <Pricing />
-                <Gallery />
-                <WhyChooseUs />
-                <Testimonials />
-                <FAQ />
-                <ContactCTA />
-            </main>
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Pricing />
+        <Gallery />
+        <WhyChooseUs />
+        <Testimonials />
+        <FAQ />
+        <ContactCTA />
+      </main>
 
-            {/* Footer reveal area */}
-            <div className="relative">
-                <div className="sticky bottom-0 z-0">
-                    <Footer />
-                </div>
-            </div>
+      <Footer />
 
-            <WhatsAppButton />
-        </div>
-    );
+      <WhatsAppButton />
+    </div>
+  );
 }
 
 export default HomePage;
