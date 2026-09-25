@@ -6,11 +6,11 @@ function About() {
     <section id="about" className="bg-[#FAF6EF] py-20 sm:py-28">
       <Container>
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <div className="overflow-hidden rounded-[2rem]">
+          <div className="overflow-hidden rounded-4xl">
             <img
               src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
               alt="Henna artist"
-              className="h-[500px] w-full object-cover"
+              className="h-125 w-full object-cover"
             />
           </div>
 

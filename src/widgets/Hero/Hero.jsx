@@ -18,7 +18,7 @@ function Hero() {
       <div className="absolute inset-0 bg-black/45" />
 
       {/* Decorative gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
 
       <div className="relative z-10 w-full px-5 pb-20 pt-32 sm:px-8 sm:pb-24">
         <div className="mx-auto max-w-7xl">

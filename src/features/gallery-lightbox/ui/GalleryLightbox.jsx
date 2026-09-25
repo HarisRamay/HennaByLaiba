@@ -7,7 +7,7 @@ function GalleryLightbox({ item, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-5"
+      className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-5"
       onClick={onClose}
     >
       <button

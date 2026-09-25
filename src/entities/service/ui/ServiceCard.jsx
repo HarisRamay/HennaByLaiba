@@ -1,7 +1,7 @@
 function ServiceCard({ service }) {
   return (
-    <article className="group overflow-hidden rounded-[1.5rem] bg-[#F1E7D8]">
-      <div className="aspect-[4/5] overflow-hidden">
+    <article className="group overflow-hidden rounded-3xl bg-[#F1E7D8]">
+      <div className="aspect-4/5 overflow-hidden">
         <img
           src={service.image}
           alt={service.title}
