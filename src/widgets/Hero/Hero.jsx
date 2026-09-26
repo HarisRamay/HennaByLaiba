@@ -1,17 +1,18 @@
 import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
+import heroImg from "../../shared/assets/images/MidLengthHenna.PNG";
 
 function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-end overflow-hidden bg-[#2C211D]"
+      className="relative flex min-h-175 items-end overflow-hidden bg-[#2C211D] sm:min-h-screen"
     >
       {/* Background */}
       <img
-        src="https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=1600&q=85"
+        src={heroImg}
         alt="Henna design"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-center"
       />
 
       {/* Overlay */}

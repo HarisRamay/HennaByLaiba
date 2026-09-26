@@ -1,5 +1,6 @@
 import Container from "../../shared/ui/Container/Container";
 import SectionHeading from "../../shared/ui/SectionHeading/SectionHeading";
+import minimal2 from "../../shared/assets/images/Minimal2.PNG";
 
 function About() {
   return (
@@ -8,7 +9,7 @@ function About() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="overflow-hidden rounded-4xl">
             <img
-              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
+              src={minimal2}
               alt="Henna artist"
               className="h-125 w-full object-cover"
             />
