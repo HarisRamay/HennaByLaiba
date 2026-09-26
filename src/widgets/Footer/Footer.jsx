@@ -79,7 +79,7 @@ function Footer() {
             <div className="mt-6 flex gap-3">
               {/* Instagram */}
               <a
-                href="#"
+                href="https://www.instagram.com/henna_by_laiba07?stkn=MWEyOTVmdGI1bGU0Mw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -106,7 +106,7 @@ function Footer() {
 
               {/* TikTok */}
               <a
-                href="#"
+                href="https://www.tiktok.com/@hennabylaiba070?_r=1&_t=ZS-9A2lQ1PndR6"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
@@ -123,7 +123,7 @@ function Footer() {
 
               {/* Facebook */}
               <a
-                href="#"
+                href="https://www.facebook.com/share/19SLtpDb1b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
