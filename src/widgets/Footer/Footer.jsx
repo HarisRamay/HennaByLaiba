@@ -1,5 +1,5 @@
 function Footer() {
-  const whatsappNumber = "923XXXXXXXXX";
+  const whatsappNumber = "923281212467";
 
   const whatsappMessage = encodeURIComponent(
     "Hi Laiba! I saw your website and would like to enquire about a henna booking."
