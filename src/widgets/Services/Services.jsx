@@ -13,9 +13,30 @@ function Services() {
           description="Handcrafted henna for weddings, celebrations and everything worth remembering."
         />
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div
+          className="
+    flex
+    gap-5
+    overflow-x-auto
+    snap-x
+    snap-mandatory
+    px-1
+    pb-5
+    [-ms-overflow-style:none]
+    [scrollbar-width:none]
+    [&::-webkit-scrollbar]:hidden
+    md:grid
+    md:grid-cols-3
+    md:gap-6
+    md:overflow-visible
+    md:snap-none
+  "
+        >
           {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+            <ServiceCard
+              key={service.title}
+              service={service}
+            />
           ))}
         </div>
       </Container>
