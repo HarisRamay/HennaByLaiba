@@ -27,3 +27,15 @@ section {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+@keyframes swipeArrow {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateX(7px);
+    opacity: 1;
+  }
+}

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 import Container from "../../shared/ui/Container/Container";
 import SectionHeading from "../../shared/ui/SectionHeading/SectionHeading";
@@ -203,11 +204,10 @@ function Pricing() {
 
     if (!cards.length) return;
 
-    const scrollLeft = carousel.scrollLeft;
     const cardWidth = cards[0].offsetWidth;
     const gap = 16;
 
-    const index = Math.round(scrollLeft / (cardWidth + gap));
+    const index = Math.round(carousel.scrollLeft / (cardWidth + gap));
 
     setActiveIndex(
       Math.min(Math.max(index, 0), pricingGroups.length - 1)
@@ -266,30 +266,45 @@ function Pricing() {
         {/* =========================
             MOBILE PRICING CAROUSEL
         ========================== */}
-        <div className="relative mt-12 md:hidden">
-          {/* Left fade */}
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-6 bg-gradient-to-r from-[#FAF6EF] to-transparent" />
+        <div className="relative mt-8 md:hidden">
 
-          {/* Right fade */}
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-[#FAF6EF] to-transparent" />
+          {/* Animated swipe indicator */}
+          <div className="mb-3 flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[#6B2737]">
+            <span>Swipe</span>
 
-          <div
-            ref={carouselRef}
-            onScroll={handleScroll}
-            className="scrollbar-none flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-2 pb-5"
-          >
-            {pricingGroups.map((group) => (
-              <div
-                key={group.title}
-                className="w-[85vw] max-w-[420px] shrink-0 snap-center"
-              >
-                <PricingCard group={group} />
-              </div>
-            ))}
+            <ArrowRight
+              size={17}
+              strokeWidth={2}
+              className="animate-[swipeArrow_1.2s_ease-in-out_infinite]"
+            />
+          </div>
+
+          {/* Carousel */}
+          <div className="relative">
+            {/* Left edge fade */}
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-5 bg-gradient-to-r from-[#FAF6EF] to-transparent" />
+
+            {/* Right edge fade */}
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-[#FAF6EF] to-transparent" />
+
+            <div
+              ref={carouselRef}
+              onScroll={handleScroll}
+              className="scrollbar-none flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-2 pb-5"
+            >
+              {pricingGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="w-[82vw] max-w-[420px] shrink-0 snap-center"
+                >
+                  <PricingCard group={group} />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Pagination bubbles */}
-          <div className="mt-2 flex items-center justify-center gap-2">
+          <div className="mt-1 flex items-center justify-center gap-2">
             {pricingGroups.map((group, index) => (
               <button
                 key={group.title}
@@ -304,11 +319,6 @@ function Pricing() {
               />
             ))}
           </div>
-
-          {/* Swipe hint */}
-          <p className="mt-3 text-center text-xs text-[#7A675F]">
-            Swipe to explore more packages
-          </p>
         </div>
 
         {/* =========================
