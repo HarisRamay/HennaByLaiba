@@ -11,7 +11,8 @@ function ServiceCard({ service }) {
         hover:shadow-[0_10px_25px_rgba(107,39,55,0.14)]
       "
     >
-      <div className="aspect-4/5 overflow-hidden">
+      {/* Service Image */}
+      <div className="h-56 overflow-hidden sm:h-64 md:aspect-4/5 md:h-auto">
         <img
           src={service.image}
           alt={service.title}
@@ -19,7 +20,8 @@ function ServiceCard({ service }) {
         />
       </div>
 
-      <div className="p-6">
+      {/* Service Content */}
+      <div className="p-5 sm:p-6">
         <h3 className="font-serif text-2xl text-[#6B2737]">
           {service.title}
         </h3>
