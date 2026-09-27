@@ -270,7 +270,7 @@ function Pricing() {
 
           {/* Animated swipe indicator */}
           <div className="mb-3 flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[#6B2737]">
-            <span>Swipe</span>
+            <span>Swipe for more</span>
 
             <ArrowRight
               size={17}
