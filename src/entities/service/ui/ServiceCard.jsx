@@ -20,6 +20,7 @@ function ServiceCard({ service }) {
             h-full
             w-full
             object-cover
+            object-center
             transition
             duration-700
             group-hover:scale-105
