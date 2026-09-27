@@ -51,51 +51,15 @@ function WhyChooseUs() {
                 />
 
                 {/* Cards */}
-                <div
-                    className="
-                        flex gap-5
-                        overflow-x-auto
-                        snap-x snap-mandatory
-                        pb-5
-                        scrollbar-none
-
-                        sm:grid
-                        sm:grid-cols-2
-                        sm:gap-4
-                        sm:overflow-visible
-                        sm:snap-none
-
-                        lg:grid-cols-4
-                    "
-                >
+                <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-5 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:snap-none lg:grid-cols-4">
                     {reasons.map((reason) => {
                         const Icon = reason.icon;
 
                         return (
                             <article
                                 key={reason.id}
-                                className="
-                                    flex-none
-                                    w-[85%]
-                                    snap-start
-
-                                    rounded-3xl
-                                    border
-                                    border-white/15
-                                    bg-white/5
-                                    p-6
-                                    text-center
-                                    backdrop-blur-sm
-
-                                    transition
-                                    duration-300
-                                    hover:-translate-y-1
-                                    hover:bg-white/10
-
-                                    sm:w-auto
-                                "
+                                className="w-[85%] min-w-[85%] shrink-0 snap-center rounded-3xl border border-white/15 bg-white/5 p-6 text-center backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/10 md:w-auto md:min-w-0"
                             >
-                                {/* Icon */}
                                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E7CFA4] text-[#6B2737]">
                                     <Icon
                                         size={24}
@@ -103,12 +67,10 @@ function WhyChooseUs() {
                                     />
                                 </div>
 
-                                {/* Title */}
                                 <h3 className="mt-5 font-serif text-2xl text-white">
                                     {reason.title}
                                 </h3>
 
-                                {/* Description */}
                                 <p className="mt-3 text-sm leading-6 text-white/70">
                                     {reason.description}
                                 </p>
@@ -118,7 +80,7 @@ function WhyChooseUs() {
                 </div>
 
                 {/* Swipe Indicator */}
-                <div className="mt-5 flex justify-center gap-2 sm:hidden">
+                <div className="mt-4 flex justify-center gap-2 md:hidden">
                     <span className="h-1.5 w-6 rounded-full bg-[#E7CFA4]" />
                     <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
                     <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
