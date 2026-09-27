@@ -1,6 +1,16 @@
 function ServiceCard({ service }) {
   return (
-    <article className="group overflow-hidden rounded-3xl bg-[#F1E7D8]">
+    <article
+      className="
+        group overflow-hidden rounded-3xl
+        border border-[#D8C8B5]
+        bg-[#F1E7D8]
+        shadow-[0_4px_15px_rgba(107,39,55,0.08)]
+        transition-all duration-300
+        hover:-translate-y-1
+        hover:shadow-[0_10px_25px_rgba(107,39,55,0.14)]
+      "
+    >
       <div className="aspect-4/5 overflow-hidden">
         <img
           src={service.image}
