@@ -13,17 +13,17 @@ function ServiceCard({ service }) {
         md:min-w-0
       "
     >
-      {/* Complete Image */}
-      <div className="w-full overflow-hidden bg-[#F1E7D8]">
+      {/* Image - 65% */}
+      <div className="h-[65%] min-h-[320px] overflow-hidden">
         <img
           src={service.image}
           alt={service.title}
-          className="block h-auto w-full object-contain"
+          className="h-full w-full object-cover object-center"
         />
       </div>
 
-      {/* Content */}
-      <div className="p-5 sm:p-6">
+      {/* Content - 35% */}
+      <div className="h-[35%] p-5 sm:p-6">
         <h3 className="font-serif text-2xl text-[#6B2737]">
           {service.title}
         </h3>
