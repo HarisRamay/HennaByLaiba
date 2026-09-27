@@ -12,7 +12,7 @@ function ServiceCard({ service }) {
       "
     >
       {/* Service Image */}
-      <div className="h-48 overflow-hidden sm:h-56 md:h-80">
+      <div className="h-52 overflow-hidden sm:h-60 md:h-80">
         <img
           src={service.image}
           alt={service.title}
@@ -21,7 +21,7 @@ function ServiceCard({ service }) {
             w-full
             object-cover
             object-center
-            transition
+            transition-transform
             duration-700
             group-hover:scale-105
           "
