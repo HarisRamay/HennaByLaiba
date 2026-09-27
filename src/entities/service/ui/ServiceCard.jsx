@@ -12,13 +12,12 @@ function ServiceCard({ service }) {
       "
     >
       {/* Service Image */}
-      <div className="overflow-hidden">
+      <div className="h-48 overflow-hidden sm:h-56 md:h-80">
         <img
           src={service.image}
           alt={service.title}
           className="
-            block
-            h-auto
+            h-full
             w-full
             object-cover
             transition
