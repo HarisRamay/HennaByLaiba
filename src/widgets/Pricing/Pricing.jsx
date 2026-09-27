@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 import Container from "../../shared/ui/Container/Container";
 import SectionHeading from "../../shared/ui/SectionHeading/SectionHeading";
 
@@ -189,6 +191,61 @@ function PricingCard({ group }) {
 }
 
 function Pricing() {
+  const carouselRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    const carousel = carouselRef.current;
+
+    if (!carousel) return;
+
+    const cards = carousel.children;
+
+    if (!cards.length) return;
+
+    const scrollLeft = carousel.scrollLeft;
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 16;
+
+    const index = Math.round(scrollLeft / (cardWidth + gap));
+
+    setActiveIndex(
+      Math.min(Math.max(index, 0), pricingGroups.length - 1)
+    );
+  };
+
+  const scrollToCard = (index) => {
+    const carousel = carouselRef.current;
+
+    if (!carousel) return;
+
+    const card = carousel.children[index];
+
+    if (!card) return;
+
+    card.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+
+    setActiveIndex(index);
+  };
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+
+    if (!carousel) return;
+
+    carousel.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      carousel.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section
       id="pricing"
@@ -216,7 +273,11 @@ function Pricing() {
           {/* Right fade */}
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-[#FAF6EF] to-transparent" />
 
-          <div className="scrollbar-none flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-2 pb-5">
+          <div
+            ref={carouselRef}
+            onScroll={handleScroll}
+            className="scrollbar-none flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-2 pb-5"
+          >
             {pricingGroups.map((group) => (
               <div
                 key={group.title}
@@ -227,9 +288,26 @@ function Pricing() {
             ))}
           </div>
 
+          {/* Pagination bubbles */}
+          <div className="mt-2 flex items-center justify-center gap-2">
+            {pricingGroups.map((group, index) => (
+              <button
+                key={group.title}
+                type="button"
+                onClick={() => scrollToCard(index)}
+                aria-label={`Show ${group.title}`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  activeIndex === index
+                    ? "w-7 bg-[#6B2737]"
+                    : "w-2.5 bg-[#B8945B]/40 hover:bg-[#B8945B]/70"
+                }`}
+              />
+            ))}
+          </div>
+
           {/* Swipe hint */}
-          <p className="mt-2 text-center text-xs text-[#7A675F]">
-            Swipe to explore more packages →
+          <p className="mt-3 text-center text-xs text-[#7A675F]">
+            Swipe to explore more packages
           </p>
         </div>
 
