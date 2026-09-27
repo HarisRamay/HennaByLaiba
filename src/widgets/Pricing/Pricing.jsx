@@ -196,6 +196,7 @@ function Pricing() {
     >
       {/* Soft decorative background elements */}
       <div className="pointer-events-none absolute -left-24 top-20 h-64 w-64 rounded-full bg-[#6B2737]/5 blur-3xl" />
+
       <div className="pointer-events-none absolute -right-24 bottom-20 h-72 w-72 rounded-full bg-[#B8945B]/10 blur-3xl" />
 
       <Container>
@@ -205,7 +206,37 @@ function Pricing() {
           description="Traditional art, timeless beauty. Choose the package that suits your occasion, or ask us about a customized design."
         />
 
-        <div className="mx-auto mt-12 max-w-4xl space-y-7">
+        {/* =========================
+            MOBILE PRICING CAROUSEL
+        ========================== */}
+        <div className="relative mt-12 md:hidden">
+          {/* Left fade */}
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-6 bg-gradient-to-r from-[#FAF6EF] to-transparent" />
+
+          {/* Right fade */}
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-[#FAF6EF] to-transparent" />
+
+          <div className="scrollbar-none flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-2 pb-5">
+            {pricingGroups.map((group) => (
+              <div
+                key={group.title}
+                className="w-[85vw] max-w-[420px] shrink-0 snap-center"
+              >
+                <PricingCard group={group} />
+              </div>
+            ))}
+          </div>
+
+          {/* Swipe hint */}
+          <p className="mt-2 text-center text-xs text-[#7A675F]">
+            Swipe to explore more packages →
+          </p>
+        </div>
+
+        {/* =========================
+            TABLET / DESKTOP
+        ========================== */}
+        <div className="mx-auto mt-12 hidden max-w-4xl space-y-7 md:block">
           {pricingGroups.map((group) => (
             <PricingCard key={group.title} group={group} />
           ))}
