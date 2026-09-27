@@ -41,7 +41,7 @@ const reasons = [
 
 function WhyChooseUs() {
     return (
-        <section className="bg-[#6B2737] py-20 sm:py-28">
+        <section className="bg-[#6B2737] py-16 sm:py-20 md:py-28">
             <Container>
                 <SectionHeading
                     eyebrow="Why Laiba"
@@ -50,17 +50,44 @@ function WhyChooseUs() {
                     theme="dark"
                 />
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {/* Mobile Swipe Carousel */}
+                <div
+                    className="
+                        -mx-4 flex gap-4 overflow-x-auto px-4 pb-4
+                        snap-x snap-mandatory
+                        scrollbar-hide
+                        sm:-mx-0 sm:px-0
+                        sm:grid sm:grid-cols-2
+                        sm:overflow-visible
+                        sm:snap-none
+                        lg:grid-cols-4
+                    "
+                >
                     {reasons.map((reason) => {
                         const Icon = reason.icon;
 
                         return (
                             <article
                                 key={reason.id}
-                                className="rounded-3xl border border-white/15 bg-white/5 p-6 text-center backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/10"
+                                className="
+                                    min-w-[86%] snap-center
+                                    rounded-3xl
+                                    border border-white/15
+                                    bg-white/5
+                                    p-6
+                                    text-center
+                                    backdrop-blur-sm
+                                    transition duration-300
+                                    hover:-translate-y-1
+                                    hover:bg-white/10
+                                    sm:min-w-0
+                                "
                             >
                                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E7CFA4] text-[#6B2737]">
-                                    <Icon size={24} strokeWidth={1.7} />
+                                    <Icon
+                                        size={24}
+                                        strokeWidth={1.7}
+                                    />
                                 </div>
 
                                 <h3 className="mt-5 font-serif text-2xl text-white">
@@ -73,6 +100,20 @@ function WhyChooseUs() {
                             </article>
                         );
                     })}
+                </div>
+
+                {/* Mobile Swipe Indicator */}
+                <div className="mt-4 flex justify-center gap-2 sm:hidden">
+                    {reasons.map((reason, index) => (
+                        <span
+                            key={reason.id}
+                            className={`h-1.5 rounded-full transition-all ${
+                                index === 0
+                                    ? "w-6 bg-[#E7CFA4]"
+                                    : "w-1.5 bg-white/30"
+                            }`}
+                        />
+                    ))}
                 </div>
             </Container>
         </section>
